@@ -1,11 +1,13 @@
-// eslint-disable-line no-use-before-define
 class Tree {
   constructor(value) {
     this.value = value;
     this.children = [];
   }
 
-  addChild(value) {}
+  addChild(value) {
+    const childTree = new Tree(value);
+    this.children.push(childTree);
+  }
 
   contains(value) {}
 
@@ -23,6 +25,8 @@ requirements for ALL data structures in this exercise.
 
   traverseBreadthFirst(fn) {}
 }
+
+module.exports = Tree;
 
 /*
 |XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
