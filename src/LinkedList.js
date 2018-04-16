@@ -11,11 +11,15 @@ class LinkedList {
     this.tail = this.head;
   }
 
-  appendToTail(value) {}
+  appendToTail(value) {
+    const newNode = new Node(value);
+    this.tail = newNode;
+    return newNode;
+  }
 
-  removeHead() {}
+  //removeHead() {}
 
-  findNode(value) {}
+  //findNode(value) {}
 
   /*
 +-------------------------+
