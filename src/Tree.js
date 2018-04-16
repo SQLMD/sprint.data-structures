@@ -9,7 +9,19 @@ class Tree {
     this.children.push(childTree);
   }
 
-  contains(value) {}
+  contains(value) {
+    const searchTree = (target) => {
+      if (!target) {
+        return false;
+      } else if (target.value === value && target !== undefined) {
+        return true;
+      } else {
+        target.children.forEach((child) => searchTree(child));
+      }
+    };
+
+    return searchTree(this);
+  }
 
   /*
 +-------------------------+
