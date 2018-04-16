@@ -2,7 +2,7 @@ function Node(value) {
   this.next = null;
   this.value = value;
 }
-
+// eslint-disable-line no-use-before-define
 class LinkedList {
   constructor(headValue) {
     if (headValue === undefined)
@@ -23,7 +23,21 @@ class LinkedList {
     this.head = newHead;
   }
 
-  //findNode(value) {}
+  findNode(value) {
+    const searchList = (target) => {
+      if (!target) {
+        return `No node with value: ${value} found`;
+      } else if (target.value === value && target !== undefined) {
+        return target;
+      } else {
+        return searchList(target.next);
+      }
+    };
+
+    let foundNode = searchList(this.head);
+
+    return foundNode;
+  }
 
   /*
 +-------------------------+
