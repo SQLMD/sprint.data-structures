@@ -12,10 +12,16 @@ class HashTable {
   }
 
   retrieve(key) {
-    const idx = simpleHash(key, this.limit);
+    const index = simpleHash(key, this.limit);
+    return this.storage[index];
   }
 
-  remove(key) {}
+  remove(key) {
+    const index = simpleHash(key, this.limit);
+    if (index in this.storage) {
+      this.storage[index] = null;
+    }
+  }
 }
 
 module.exports = HashTable;
