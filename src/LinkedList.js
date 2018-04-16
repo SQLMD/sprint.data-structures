@@ -71,3 +71,7 @@ module.exports = LinkedList;
 |X                               X
 |XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 */
+
+// appendToTail is O(1)
+// removeHead is O(1)
+// findNode is O(N)
