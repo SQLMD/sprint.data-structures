@@ -19,7 +19,7 @@ class LinkedList {
   }
 
   removeHead() {
-    const newHead = new Node(this.head.next);
+    const newHead = this.head.next;
     this.head = newHead;
   }
 
