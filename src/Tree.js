@@ -1,3 +1,4 @@
+// eslint-disable-line no-use-before-define
 class Tree {
   constructor(value) {
     this.value = value;
