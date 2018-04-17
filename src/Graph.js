@@ -18,15 +18,20 @@ class Graph {
   }
 
   addEdge(value1, value2) {
-    if (
-      this.nodes.hasOwnProperty(value1) &&
-      this.nodes.hasOwnProperty(value2)
-    ) {
+    if (this.contains(value1) && this.contains(value2)) {
       this.nodes[value1].push(value2);
       this.nodes[value2].push(value1);
-    } else {
-      return "Invalid node value";
     }
+    return "Invalid node value";
+  }
+
+  removeEdge(value1, value2) {
+    const edges1 = this.nodes[value1];
+    const index1 = edges1.indexOf(value2);
+    edges1.splice(index1);
+    const edges2 = this.nodes[value2];
+    const index2 = edges2.indexOf(value1);
+    edges2.splice(index2);
   }
 
   contains(value) {
