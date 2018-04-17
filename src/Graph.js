@@ -2,6 +2,10 @@ class Graph {
   constructor() {
     this.nodes = {};
   }
+
+  addNode(value) {
+    this.nodes[value] = [];
+  }
 }
 
 /*
@@ -12,3 +16,4 @@ class Graph {
 |X                               X
 |XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 */
+module.exports = Graph;
