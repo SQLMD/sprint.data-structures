@@ -18,8 +18,19 @@ class Graph {
   }
 
   addEdge(value1, value2) {
-    this.nodes[value1].push(value2);
-    this.nodes[value2].push(value1);
+    if (
+      this.nodes.hasOwnProperty(value1) &&
+      this.nodes.hasOwnProperty(value2)
+    ) {
+      this.nodes[value1].push(value2);
+      this.nodes[value2].push(value1);
+    } else {
+      return "Invalid node value";
+    }
+  }
+
+  contains(value) {
+    return this.nodes.hasOwnProperty(value);
   }
 }
 
