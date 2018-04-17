@@ -9,18 +9,19 @@ class BinarySearchTree {
     if (newValue <= this.value) {
       if (!this.left) {
         this.left = new BinarySearchTree(newValue);
-        return this.left;
+        // return this;
       } else {
         this.left.insert(newValue);
       }
     } else {
       if (!this.right) {
         this.right = new BinarySearchTree(newValue);
-        return this.right;
+        // return this;
       } else {
         this.right.insert(newValue);
       }
     }
+    return this;
   }
   contains(value) {
     let result = false;
@@ -29,7 +30,7 @@ class BinarySearchTree {
         result = true;
         return result;
       } else {
-        if (value === target.left.value || value === target.right) {
+        if (value === target.left.value || value === target.right.value) {
           result = true;
           return result;
         } else if (value < target.left.value) {
@@ -44,6 +45,20 @@ class BinarySearchTree {
     };
     search(this);
     return result;
+  }
+
+  traverseDepthFirstInOrder(action) {
+    const explore = (bst) => {
+      if (bst.left) {
+        explore(bst.left);
+      }
+      action(bst);
+      if (bst.right) {
+        explore(bst.right);
+      }
+      // action(bst);
+    };
+    explore(this);
   }
 }
 
