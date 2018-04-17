@@ -8,13 +8,12 @@ class Graph {
   }
 
   removeNode(value) {
-    delete this.nodes[value];
-    for (let node in this.nodes) {
-      if (this.nodes[node].includes(value)) {
-        const index = this.nodes[node].indexOf(value);
-        this.nodes[node].splice(index, 1);
+    for (let vertex in this.nodes) {
+      if (this.nodes[vertex].includes(value)) {
+        this.removeRelationship(vertex, value);
       }
     }
+    delete this.nodes[value];
   }
 
   addEdge(value1, value2) {
@@ -26,12 +25,14 @@ class Graph {
   }
 
   removeEdge(value1, value2) {
-    const edges1 = this.nodes[value1];
-    const index1 = edges1.indexOf(value2);
-    edges1.splice(index1);
-    const edges2 = this.nodes[value2];
-    const index2 = edges2.indexOf(value1);
-    edges2.splice(index2);
+    this.removeRelationship(value1, value2);
+    this.removeRelationship(value2, value1);
+  }
+
+  removeRelationship(v1, v2) {
+    const edges = this.nodes[v1];
+    const index = edges.indexOf(Number.parseInt(v2));
+    edges.splice(index, 1);
   }
 
   hasEdge(value1, value2) {
