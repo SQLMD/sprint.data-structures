@@ -38,9 +38,9 @@ Do not proceed until you are done with the basic
 requirements for ALL data structures in this exercise.
 
 */
-  traverseDepthFirst(fn) {}
+  //traverseDepthFirst(fn) {}
 
-  traverseBreadthFirst(fn) {}
+  //traverseBreadthFirst(fn) {}
 }
 
 module.exports = Tree;

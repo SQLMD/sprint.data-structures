@@ -49,15 +49,15 @@ Do not proceed until you are done with the basic
 requirements for ALL data structures in this exercise.
 */
 
-  forEach(callback) {}
+  // forEach(callback) {}
 
-  print() {}
+  // print() {}
 
-  insertHead(value) {}
+  // insertHead(value) {}
 
-  insertAfter(refNode, value) {}
+  // insertAfter(refNode, value) {}
 
-  removeAfter(refNode) {}
+  // removeAfter(refNode) {}
 }
 
 module.exports = LinkedList;
