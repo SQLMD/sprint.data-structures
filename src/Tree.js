@@ -10,17 +10,22 @@ class Tree {
   }
 
   contains(value) {
+    let result = false;
     const searchTree = (target) => {
-      if (!target) {
-        return false;
-      } else if (target.value === value && target !== undefined) {
-        return true;
+      if (target.value === value && target !== undefined) {
+        result = true;
+        return result;
+      } else if (!target.children) {
+        result = false;
+        return result;
       } else {
-        target.children.forEach((child) => searchTree(child));
+        target.children.forEach((child) => {
+          return searchTree(child);
+        });
       }
     };
-
-    return searchTree(this);
+    searchTree(this);
+    return result;
   }
 
   /*
