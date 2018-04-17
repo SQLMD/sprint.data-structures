@@ -42,6 +42,7 @@ class Graph {
     return this.nodes.hasOwnProperty(value);
   }
 }
+module.exports = Graph;
 
 /*
 |XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -51,4 +52,11 @@ class Graph {
 |X                               X
 |XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 */
-module.exports = Graph;
+
+//add O(1)
+
+//remove Node O(n)
+
+//removeEdge O(1)
+
+//contains (search)  O(1)

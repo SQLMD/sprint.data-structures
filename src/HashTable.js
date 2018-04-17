@@ -34,3 +34,9 @@ module.exports = HashTable;
 |X                               X
 |XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 */
+
+//add (insert) O(n)
+
+//retrieve (search) O(n)
+
+//remove O(n)

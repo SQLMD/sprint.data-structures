@@ -53,3 +53,7 @@ module.exports = Tree;
 |X                               X
 |XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 */
+
+//add O(1)
+
+//search O(n)

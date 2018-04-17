@@ -9,20 +9,19 @@ class BinarySearchTree {
     if (newValue <= this.value) {
       if (!this.left) {
         this.left = new BinarySearchTree(newValue);
-        // return this;
       } else {
         this.left.insert(newValue);
       }
     } else {
       if (!this.right) {
         this.right = new BinarySearchTree(newValue);
-        // return this;
       } else {
         this.right.insert(newValue);
       }
     }
     return this;
   }
+
   contains(value) {
     let result = false;
     const search = (target) => {
@@ -56,7 +55,6 @@ class BinarySearchTree {
       if (bst.right) {
         explore(bst.right);
       }
-      // action(bst);
     };
     explore(this);
   }
@@ -72,3 +70,9 @@ module.exports = BinarySearchTree;
 |X                               X
 |XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 */
+
+// add (insert) O(n)
+
+// traverse O(n)
+
+//contains (search)  O(log n)
