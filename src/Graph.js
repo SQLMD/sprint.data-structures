@@ -34,6 +34,10 @@ class Graph {
     edges2.splice(index2);
   }
 
+  hasEdge(value1, value2) {
+    return this.nodes[value1].includes(value2);
+  }
+
   contains(value) {
     return this.nodes.hasOwnProperty(value);
   }
